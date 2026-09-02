@@ -1,0 +1,345 @@
+/* Landing page look. Spec 0004: the recorded exception to spec 0003, limited
+   to index.html and src/landing/. Raw colours live here as --sc-* tokens only. */
+:root {
+  --sc-canvas: #f6f5f1;
+  --sc-surface: #ffffff;
+  --sc-ink: #17181c;
+  --sc-ink-soft: #5c5f68;
+  --sc-accent: #1d4ed8;
+  --sc-accent-ink: #ffffff;
+  --sc-font-display:
+    'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --sc-font-text: system-ui, sans-serif;
+  --sc-shadow-color: 45 10% 20%;
+}
+
+/* The app's index.css is loaded for the demo's tokens; undo its page rules. */
+html {
+  color-scheme: light;
+}
+body {
+  background: var(--sc-canvas);
+  color: var(--sc-ink);
+  font-family: var(--sc-font-text);
+  font-size: var(--sc-t-base);
+  line-height: var(--sc-leading-body);
+}
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  margin: 0;
+  font-weight: 400;
+}
+footer {
+  margin-top: 0;
+  font-size: inherit;
+  color: inherit;
+}
+main a {
+  color: var(--sc-accent);
+  text-decoration-thickness: 1.5px;
+}
+main a:hover {
+  text-decoration-thickness: 2.5px;
+}
+
+/* Title page */
+.title {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+}
+.wordmark {
+  font-family: var(--sc-font-display);
+  font-size: clamp(5rem, 22vw, 16rem);
+  line-height: var(--sc-leading-none);
+  letter-spacing: var(--sc-track-tight);
+  text-wrap: balance;
+}
+.lede {
+  font-family: var(--sc-font-display);
+  font-size: var(--sc-t-xl);
+  line-height: var(--sc-leading-tight);
+  max-width: 24ch;
+  margin: 0;
+  text-wrap: balance;
+}
+.skip {
+  color: var(--sc-ink-soft);
+  max-width: var(--sc-measure);
+  margin: 0;
+}
+.sc-stack > .lede {
+  margin-top: var(--sc-6);
+}
+.sc-stack > .skip {
+  margin-top: var(--sc-8);
+}
+
+/* Chapters: each paints its own ground, hard cuts between them. */
+.chapter {
+  min-height: 100svh;
+  background: var(--sc-canvas);
+}
+.chapter--ink {
+  --sc-canvas: #17181c;
+  --sc-surface: #22242a;
+  --sc-ink: #f3f2ee;
+  --sc-ink-soft: #a7a9b1;
+  --sc-accent: #8ab4ff;
+  --sc-accent-ink: #17181c;
+  --sc-shadow-color: 220 20% 2%;
+  color: var(--sc-ink);
+}
+.chapter--ink .sc-body {
+  letter-spacing: 0.005em;
+  line-height: 1.7;
+}
+.intertitle {
+  font-family: var(--sc-font-display);
+  font-size: var(--sc-t-3xl);
+  line-height: var(--sc-leading-tight);
+  letter-spacing: var(--sc-track-snug);
+  text-wrap: balance;
+  max-width: 18ch;
+  margin-bottom: var(--sc-9);
+}
+.intertitle--big {
+  font-size: var(--sc-t-4xl);
+  max-width: 14ch;
+  letter-spacing: var(--sc-track-tight);
+}
+.spread {
+  display: grid;
+  grid-template-columns: minmax(0, 34ch) minmax(0, 1fr);
+  gap: var(--sc-8) var(--sc-9);
+  align-items: start;
+}
+.spread--flip {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 34ch);
+}
+.spread--flip > .sc-stack {
+  order: 2;
+}
+.media {
+  margin: 0;
+}
+.media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--sc-r-md);
+  box-shadow: var(--sc-e2), var(--sc-edge);
+}
+.media--phone {
+  max-width: 18rem;
+  justify-self: center;
+}
+.media figcaption {
+  margin-top: var(--sc-3);
+  font-size: var(--sc-t-sm);
+  color: var(--sc-ink-soft);
+}
+
+/* The close: the demo on the real tokens, then the colophon. Holds. */
+.chapter--close {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+}
+.chapter--close .intertitle {
+  margin-bottom: var(--sc-3);
+}
+.caption {
+  color: var(--sc-ink-soft);
+  font-size: var(--sc-t-sm);
+  margin: 0;
+}
+.sc-stack > .demo {
+  margin-top: var(--sc-6);
+}
+.demo {
+  color-scheme: light dark;
+  max-width: var(--measure);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--sc-r-md);
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: var(--sc-e2);
+  font-family: var(--font);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  letter-spacing: 0;
+  min-height: 12rem;
+}
+.demo ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.demo :focus-visible {
+  outline-color: var(--accent);
+}
+.sc-stack > .colophon {
+  margin-top: var(--sc-9);
+}
+.colophon__action {
+  font-family: var(--sc-font-display);
+  font-size: var(--sc-t-lg);
+  max-width: var(--sc-measure);
+  margin: 0;
+}
+.colophon__small {
+  color: var(--sc-ink-soft);
+  font-size: var(--sc-t-sm);
+  margin: var(--sc-4) 0 0;
+  max-width: var(--sc-measure);
+}
+
+/* Signature move: the folio. Desktop, right margin. */
+.folio {
+  position: fixed;
+  z-index: var(--sc-z-chrome);
+  top: 50%;
+  right: var(--sc-gutter);
+  transform: translateY(-50%);
+  width: 12rem;
+  font-size: var(--sc-t-sm);
+  color: var(--sc-ink-soft);
+  visibility: visible;
+  opacity: 1;
+}
+.folio ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.folio li + li {
+  margin-top: var(--sc-2);
+}
+.folio a {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-3);
+  min-height: 2.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+.folio a::before {
+  content: '';
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  background: var(--sc-canvas);
+}
+.folio a[aria-current] {
+  color: var(--sc-ink);
+}
+.folio a[data-done] {
+  color: var(--sc-ink-soft);
+  text-decoration: line-through;
+}
+.folio a[data-done]::before {
+  content: '\2713';
+  display: grid;
+  place-items: center;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--sc-accent-ink);
+  background: var(--sc-accent);
+  border-color: var(--sc-accent);
+}
+.folio a:hover {
+  color: var(--sc-ink);
+}
+.folio--handed {
+  visibility: hidden;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .folio {
+    transition:
+      opacity var(--sc-d-slow) var(--sc-ease-out),
+      transform var(--sc-d-slow) var(--sc-ease-out),
+      visibility 0s linear var(--sc-d-slow);
+  }
+  .folio--handed {
+    transform: translateY(-50%) translateX(40%);
+  }
+  .folio a::before {
+    transition:
+      background var(--sc-d-fast) var(--sc-ease-out),
+      border-color var(--sc-d-fast) var(--sc-ease-out);
+  }
+}
+/* Chapter two is dark: the folio reads over it, so key it to the ink ground while it is current. */
+.folio:has(a[data-for='where'][aria-current]) {
+  --sc-ink: #f3f2ee;
+  --sc-ink-soft: #a7a9b1;
+  --sc-accent: #8ab4ff;
+  --sc-accent-ink: #17181c;
+  --sc-canvas: #17181c;
+  color: var(--sc-ink-soft);
+}
+
+/* Phone: the folio is a strip along the bottom; the spreads stack. */
+@media (max-width: 860px) {
+  .wordmark {
+    font-size: clamp(4.5rem, 26vw, 8rem);
+  }
+  .intertitle--big {
+    font-size: var(--sc-t-2xl);
+  }
+  .intertitle {
+    margin-bottom: var(--sc-7);
+  }
+  .spread,
+  .spread--flip {
+    grid-template-columns: 1fr;
+    gap: var(--sc-7);
+  }
+  .spread--flip > .sc-stack {
+    order: 0;
+  }
+  .media--phone {
+    max-width: 14rem;
+    justify-self: start;
+  }
+  body {
+    padding-bottom: 3.5rem;
+  }
+  .folio {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    transform: none;
+    padding: var(--sc-2) var(--sc-gutter);
+    padding-bottom: max(var(--sc-2), env(safe-area-inset-bottom));
+    background: var(--sc-canvas);
+    border-top: 1px solid var(--sc-hairline);
+  }
+  .folio ol {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sc-3);
+  }
+  .folio li + li {
+    margin-top: 0;
+  }
+  .folio a {
+    min-height: 2.5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .folio--handed {
+      transform: translateY(100%);
+    }
+  }
+}

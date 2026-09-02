@@ -3,11 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To do</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>To do, a private list in your browser</title>
+    <meta
+      name="description"
+      content="A to do list that stays on your device. No account, no server, nothing to sign up for."
+    />
+    <meta property="og:title" content="To do, a private list in your browser" />
+    <meta
+      property="og:description"
+      content="A to do list that stays on your device. No account, no server, nothing to sign up for."
+    />
+    <meta property="og:url" content="https://toyinogun.github.io/todo-app/" />
+    <meta
+      property="og:image"
+      content="https://toyinogun.github.io/todo-app/og.png"
+    />
+    <noscript>
+      <style>
+        /* Scripts off: every section reads static and complete. */
+        [data-sc-in],
+        [data-sc-stagger] > *,
+        [data-sc-cue] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Signature move: the folio in the margin is a to do list of this page. -->
+    <aside class="folio" aria-label="Chapters">
+      <ol>
+        <li><a href="#what" data-for="what">Know what it is</a></li>
+        <li><a href="#where" data-for="where">See where it lives</a></li>
+        <li><a href="#try" data-for="try">Try it</a></li>
+      </ol>
+    </aside>
+
+    <main id="top">
+      <!-- Title page -->
+      <section class="title sc-section" data-sc-act="flow">
+        <div class="sc-wrap sc-stack" data-sc-in data-sc-stagger="80">
+          <h1 class="wordmark">To do</h1>
+          <p class="lede">A to do list that stays on your device.</p>
+          <p class="skip">
+            Three short chapters, then the list itself. Or skip ahead and
+            <a href="/todo-app/app/">Open the app</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Chapter one -->
+      <section
+        id="what"
+        class="chapter sc-section"
+        data-sc-act="flow"
+        data-chapter="what"
+      >
+        <div class="sc-wrap">
+          <h2 class="intertitle">One list.</h2>
+          <div class="spread">
+            <div class="sc-stack" data-sc-in data-sc-stagger="70">
+              <p class="sc-body">
+                To do is a single list in your browser. You add a task, tick it
+                when it is done, change the words, or delete it. There is
+                nothing else to learn.
+              </p>
+              <p class="sc-body">
+                It opens where you left it, with the list exactly as you left
+                it.
+              </p>
+            </div>
+            <figure
+              class="media"
+              data-sc-reveal="up"
+              data-sc-reveal-at="0.1 0.45"
+            >
+              <img
+                src="/src/landing/assets/app-light-desktop.png"
+                width="2560"
+                height="1120"
+                alt="The app on a laptop: a heading, an input to add a task, and three tasks, one ticked."
+              />
+              <figcaption>
+                The whole app, on a laptop, in light mode.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter two: inverted ground, the loud moment -->
+      <section
+        id="where"
+        class="chapter chapter--ink sc-section"
+        data-sc-act="flow"
+        data-chapter="where"
+      >
+        <div class="sc-wrap">
+          <h2
+            class="intertitle intertitle--big"
+            data-sc-cue="0.04 1 0.14 0"
+            data-sc-kinetic="lines"
+          >
+            Your list is saved in this browser and never leaves it.
+          </h2>
+          <div class="spread spread--flip">
+            <div class="sc-stack" data-sc-in data-sc-stagger="70">
+              <p class="sc-body">
+                No account, no server, nothing to sign up for. Close the tab and
+                it is still here. Clear the browser and it is gone, because
+                there is nowhere else it could be.
+              </p>
+              <p class="sc-body">
+                Nobody can read your list, because nothing about it ever leaves
+                the device you are holding.
+              </p>
+            </div>
+            <figure class="media media--phone" data-sc-parallax="-0.5">
+              <img
+                src="/src/landing/assets/app-dark-phone.png"
+                width="780"
+                height="1200"
+                alt="The app on a phone in dark mode, showing the same three tasks."
+              />
+              <figcaption>
+                On a phone, in dark mode. Same list, same device.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter three: the close, the demo, the colophon -->
+      <section
+        id="try"
+        class="chapter chapter--close sc-section"
+        data-sc-act="flow"
+        data-chapter="close"
+      >
+        <div class="sc-wrap sc-stack">
+          <h2 class="intertitle">Try it here.</h2>
+          <p class="caption">This sample is not saved.</p>
+          <div id="demo" class="demo" aria-label="A sample list"></div>
+          <footer class="colophon">
+            <p class="colophon__action">
+              When you want the real one,
+              <a href="/todo-app/app/">Open the app</a>. It keeps what you add.
+            </p>
+            <p class="colophon__small">
+              Made by one person as a hobby. No analytics, no cookies, no fonts
+              from anywhere else.
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/landing/main.tsx"></script>
   </body>
 </html>

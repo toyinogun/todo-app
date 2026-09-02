@@ -86,7 +86,10 @@ export function TaskList() {
         </>
       )}
 
-      <footer>Your list never leaves this browser.</footer>
+      <footer>
+        Your list never leaves this browser.{' '}
+        <a href={import.meta.env.BASE_URL}>About</a>
+      </footer>
     </main>
   )
 }
