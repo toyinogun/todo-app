@@ -30,13 +30,14 @@ export const usePersistedTasks = () => {
   // Save after every change. A frozen state (newer blob on disk) never writes.
   useEffect(() => {
     if (state.frozen) return
-    // oxlint-disable-next-line react/set-state-in-effect -- the save is the external system; its failure is only known here
-    if (!save(state.tasks))
-      setState((s) =>
-        s.banner?.kind === 'saveFailed'
-          ? s
-          : { ...s, banner: { kind: 'saveFailed' } },
-      )
+    if (save(state.tasks)) return
+    // The save is the external system; its failure is only known here.
+    // oxlint-disable-next-line react/set-state-in-effect
+    setState((s) =>
+      s.banner?.kind === 'saveFailed'
+        ? s
+        : { ...s, banner: { kind: 'saveFailed' } },
+    )
   }, [state.tasks, state.frozen])
 
   // Another tab wrote the blob: reload from it so last write does not silently win.
