@@ -15,7 +15,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | done |
-| 5 | Task list | Release 1 | in-progress |
+| 5 | Task list | Release 1 | done |
 | 6 | Landing page | Release 2 | planned |
 | 7 | Filter & search | Release 3 | planned |
 | 8 | Drag to reorder | Release 3 | planned |
@@ -62,7 +62,7 @@ Spec [0003](../specs/0003-design-system-ui-foundation.md) · code in `src/index.
 
 ## Release 1: Task list (the smallest usable whole)
 
-### 5. Task list · in-progress
+### 5. Task list · done
 Add a task, tick it done, edit its title, delete it. Saved on the device. This is the whole product on day one; you could use it tomorrow.
 **Done when:** you can add, complete, uncomplete, edit, and delete tasks; the list is there after a reload; an empty list shows a friendly prompt.
 - [x] Build it: `/develop task list`
