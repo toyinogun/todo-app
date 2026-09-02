@@ -1,7 +1,7 @@
 # 0003. Quiet design system on CSS variables with four native base pieces
 
 **Date**: 2026-09-02
-**Status**: Proposed
+**Status**: Accepted
 
 ## Summary
 
