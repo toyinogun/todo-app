@@ -14,7 +14,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | done |
-| 4 | Design system & UI foundation | Foundation | planned |
+| 4 | Design system & UI foundation | Foundation | in-progress |
 | 5 | Task list | Release 1 | planned |
 | 6 | Filter & search | Release 2 | planned |
 | 7 | Drag to reorder | Release 2 | planned |
@@ -49,10 +49,12 @@ The shape of a task and how the list is saved and loaded on the device. Leave ro
   - [x] `usePersistedTasks` hook: load, save, refuse saves on a newer blob, multi tab reload, banner state (AC-6, AC-8, AC-9)
 Spec [0002](../specs/0002-task-data-model.md) · code in `src/lib/tasks.ts`, `src/lib/storage.ts`, `src/lib/export.ts`, `src/features/tasks/usePersistedTasks.ts`
 
-### 4. Design system & UI foundation · needs a decision
+### 4. Design system & UI foundation · in-progress
 Type, color, spacing, and a handful of base pieces (input, button, checkbox, list row) so every screen feels like one app. Includes dark mode following the system theme. Everything works by keyboard alone with visible focus and labelled controls.
 **Done when:** `design.md` covers type, color, spacing, and components; dark mode follows the system; base pieces are keyboard usable with visible focus.
-- [ ] Design it (spec): `/architect design system & UI foundation`
+- [x] Design it (spec): `/architect design system & UI foundation`
+- [ ] Build it: `/develop design system & UI foundation`
+Spec [0003](../specs/0003-design-system-ui-foundation.md)
 
 ## Release 1: Task list (the smallest usable whole)
 
