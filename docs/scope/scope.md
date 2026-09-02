@@ -13,7 +13,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | done |
-| 3 | Data model | Foundation | planned |
+| 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | planned |
 | 5 | Task list | Release 1 | planned |
 | 6 | Filter & search | Release 2 | planned |
@@ -38,10 +38,16 @@ Capture conventions from the real scaffold, then install lint, format, and a pre
 - [x] Install the tooling: `/develop tooling`
 Code in `package.json` (`lint-staged`, `simple-git-hooks`, `prettier`), `.prettierrc`, `AGENTS.md`
 
-### 3. Data model · needs a decision
+### 3. Data model · done
 The shape of a task and how the list is saved and loaded on the device. Leave room for order, due date, and completion from the start so later releases add fields, not migrations.
 **Done when:** a task has a stable id, title, done flag, position, and optional due date; the list survives a page reload; a saved list from an older version still loads.
-- [ ] Design it (spec): `/architect data model`
+- [x] Design it (spec): `/architect data model`
+- [x] Build it: `/develop data model`
+  - [x] Pure task logic: full `Task` type, title rules, timestamps, add, edit, toggle, delete, reorder, renumber, with tests (AC-1 to AC-5)
+  - [x] Storage: `isTask`, `migrate`, `load`, `save` over `todo:v1`, with tests (AC-6 to AC-9)
+  - [x] Export blob as `todo-export-YYYY-MM-DD.json` (AC-10)
+  - [x] `usePersistedTasks` hook: load, save, refuse saves on a newer blob, multi tab reload, banner state (AC-6, AC-8, AC-9)
+Spec [0002](../specs/0002-task-data-model.md) · code in `src/lib/tasks.ts`, `src/lib/storage.ts`, `src/lib/export.ts`, `src/features/tasks/usePersistedTasks.ts`
 
 ### 4. Design system & UI foundation · needs a decision
 Type, color, spacing, and a handful of base pieces (input, button, checkbox, list row) so every screen feels like one app. Includes dark mode following the system theme. Everything works by keyboard alone with visible focus and labelled controls.
