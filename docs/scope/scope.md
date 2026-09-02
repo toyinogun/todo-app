@@ -12,7 +12,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | # | Feature | Phase | Status |
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | done |
-| 2 | Coding standards & tooling | Foundation | planned |
+| 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | planned |
 | 4 | Design system & UI foundation | Foundation | planned |
 | 5 | Task list | Release 1 | planned |
@@ -31,11 +31,12 @@ Pick the web stack and how tasks are stored on the device, then scaffold a runna
 - [x] Scaffold from the decision: `/develop stack & architecture`
 Spec [0001](../specs/0001-stack-architecture.md) · code in `package.json`, `vite.config.ts`, `src/`, `.github/workflows/deploy.yml`
 
-### 2. Coding standards & tooling
+### 2. Coding standards & tooling · done
 Capture conventions from the real scaffold, then install lint, format, and a pre commit check so later code stays tidy.
 **Done when:** root `AGENTS.md` reflects the real stack, and lint and format run clean.
-- [ ] Capture conventions + tooling choices: `/audit`
-- [ ] Install the tooling: `/develop tooling`
+- [x] Capture conventions + tooling choices: `/audit`
+- [x] Install the tooling: `/develop tooling`
+Code in `package.json` (`lint-staged`, `simple-git-hooks`, `prettier`), `.prettierrc`, `AGENTS.md`
 
 ### 3. Data model · needs a decision
 The shape of a task and how the list is saved and loaded on the device. Leave room for order, due date, and completion from the start so later releases add fields, not migrations.

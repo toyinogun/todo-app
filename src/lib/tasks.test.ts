@@ -5,7 +5,11 @@ describe('tasks', () => {
   it('adds a trimmed task with the next position', () => {
     const list = addTask([], '  buy milk ')
     expect(list).toHaveLength(1)
-    expect(list[0]).toMatchObject({ title: 'buy milk', done: false, position: 1 })
+    expect(list[0]).toMatchObject({
+      title: 'buy milk',
+      done: false,
+      position: 1,
+    })
   })
 
   it('ignores blank titles and never mutates the input', () => {
