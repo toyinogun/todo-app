@@ -13,7 +13,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | done |
-| 3 | Data model | Foundation | in-progress |
+| 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | planned |
 | 5 | Task list | Release 1 | planned |
 | 6 | Filter & search | Release 2 | planned |
@@ -38,7 +38,7 @@ Capture conventions from the real scaffold, then install lint, format, and a pre
 - [x] Install the tooling: `/develop tooling`
 Code in `package.json` (`lint-staged`, `simple-git-hooks`, `prettier`), `.prettierrc`, `AGENTS.md`
 
-### 3. Data model · in-progress
+### 3. Data model · done
 The shape of a task and how the list is saved and loaded on the device. Leave room for order, due date, and completion from the start so later releases add fields, not migrations.
 **Done when:** a task has a stable id, title, done flag, position, and optional due date; the list survives a page reload; a saved list from an older version still loads.
 - [x] Design it (spec): `/architect data model`
