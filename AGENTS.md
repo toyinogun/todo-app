@@ -49,6 +49,7 @@ Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`. Scope lives in `doc
 - Folder by feature: `src/features/<name>/` holds a feature's components, logic, and tests together; `src/lib/` holds pure shared logic with no React or DOM.
 - Consistent error handling: storage and browser API failures are caught and surfaced as a banner; the app keeps working in memory.
 - Accessibility baseline (WCAG AA): every control works by keyboard, has a visible focus ring, and a label.
+- Storage boundary: only `src/lib/storage.ts` reads or writes localStorage, and only the `usePersistedTasks` hook (`src/features/tasks/`) calls it from React. Task rules and list operations live in `src/lib/tasks.ts`; add fields there and in `isTask` together (spec 0002).
 - Tests: Vitest unit tests on pure logic (`*.test.ts` beside the code). UI is checked by eye and `/check verify`.
 
 ## Tooling
