@@ -1,4 +1,4 @@
-import { useId, type InputHTMLAttributes } from 'react'
+import { useId, type InputHTMLAttributes, type Ref } from 'react'
 import './components.css'
 
 export interface TextInputProps extends Omit<
@@ -7,6 +7,7 @@ export interface TextInputProps extends Omit<
 > {
   readonly label: string
   readonly hideLabel?: boolean
+  readonly ref?: Ref<HTMLInputElement>
 }
 
 export function TextInput({

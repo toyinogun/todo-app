@@ -1,0 +1,59 @@
+/* Task list screen. Every value is a token from index.css. */
+.tagline {
+  margin: calc(-1 * var(--space-3)) 0 var(--space-6);
+  color: var(--muted);
+}
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.banner p {
+  flex: 1;
+  margin: 0;
+}
+.add-form {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-end;
+  margin-bottom: var(--space-4);
+}
+.list-meta {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+.row-title.btn {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 var(--space-2);
+  border-color: transparent;
+  background: transparent;
+  font-weight: 400;
+}
+.row-title.btn:hover {
+  border-color: var(--border);
+}
+.row .field {
+  flex: 1;
+}
+.empty {
+  padding: var(--space-8) var(--space-4);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--muted);
+}
+.empty p {
+  margin: 0;
+}
+footer {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
