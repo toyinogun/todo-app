@@ -50,6 +50,7 @@ Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`. Scope lives in `doc
 - Consistent error handling: storage and browser API failures are caught and surfaced as a banner; the app keeps working in memory.
 - Accessibility baseline (WCAG AA): every control works by keyboard, has a visible focus ring, and a label.
 - Storage boundary: only `src/lib/storage.ts` reads or writes localStorage, and only the `usePersistedTasks` hook (`src/features/tasks/`) calls it from React. Task rules and list operations live in `src/lib/tasks.ts`; add fields there and in `isTask` together (spec 0002).
+- Design system: build all UI to `docs/design.md`; colours, spacing, and radius come from the tokens in `src/index.css` (the only file with raw colour values), controls come from the base pieces in `src/components/` (Button, TextInput, Checkbox, ListRow, icons), never bare `<button>` or `<input>` in features (spec 0003).
 - Tests: Vitest unit tests on pure logic (`*.test.ts` beside the code). UI is checked by eye and `/check verify`.
 
 ## Tooling
