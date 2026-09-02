@@ -54,6 +54,7 @@ Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`. Scope lives in `doc
 ## Tooling
 
 Chosen here, installed by `/develop tooling`:
+
 - Lint and format: oxlint (already installed) plus Prettier.
 - Before each commit: lint, format, and typecheck on staged files (a pre commit hook).
 - CI: already configured; `deploy.yml` runs test and build on push to `main`.
