@@ -171,13 +171,13 @@ None at runtime. `vite.config.ts` gains a `build.rollupOptions.input` map naming
 
 Skateboard: the first task is the thinnest whole (both pages exist and link to each other, plain HTML), then the landing grows into the scroll page, then the demo lands, then it is verified.
 
-1. Move the list entry to `app/index.html`, add `build.rollupOptions.input` with both entries in `vite.config.ts`, and make the root `index.html` a plain page with the name, the two lines, and the `Open the app` anchor. Run `pnpm build` and confirm both files in `dist/`, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-9**
-2. Add the `About` link to the list footer using `import.meta.env.BASE_URL`, satisfies **AC-8**
-3. Add the head tags to the root `index.html`: title, description, and the Open Graph tags from `## Decision`, satisfies **AC-7**
-4. Capture the app screenshots (light and dark, desktop and phone) into `src/landing/assets/`, satisfies **AC-5**
-5. Hand the page to `scroll-craft`: run its interview with the settled inputs above, write `BRIEF.md`, pick the grammar and signature move, pass the fingerprint gate, write the feeling curve and score, then write the root `index.html` as real HTML on the engine copied into `src/landing/`, themed in `landing.css`, with the closing act holding the copy, `div#demo`, and the Open link, satisfies **AC-1**, **AC-3**, **AC-5**, **AC-10**, **AC-11**
-6. Build the demo: `src/landing/Demo.tsx` with `useState` over the three seeded tasks and the reused `TaskRow`, mounted by `src/landing/main.tsx` into `div#demo`, with the caption, satisfies **AC-4**
-7. Verify: `pnpm build`, serve `dist/`, run the shoot at desktop, 390px, and reduced motion, read the sheet, fix, shoot again; then Tab through by hand and disable scripts once, satisfies **AC-3**, **AC-6**, **AC-10**, **AC-11**
+1. [x] Move the list entry to `app/index.html`, add `build.rollupOptions.input` with both entries in `vite.config.ts`, and make the root `index.html` a plain page with the name, the two lines, and the `Open the app` anchor. Run `pnpm build` and confirm both files in `dist/`, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-9**
+2. [x] Add the `About` link to the list footer using `import.meta.env.BASE_URL`, satisfies **AC-8**
+3. [x] Add the head tags to the root `index.html`: title, description, and the Open Graph tags from `## Decision`, satisfies **AC-7**
+4. [x] Capture the app screenshots (light and dark, desktop and phone) into `src/landing/assets/`, satisfies **AC-5**
+5. [x] Hand the page to `scroll-craft`: run its interview with the settled inputs above, write `BRIEF.md`, pick the grammar and signature move, pass the fingerprint gate, write the feeling curve and score, then write the root `index.html` as real HTML on the engine copied into `src/landing/`, themed in `landing.css`, with the closing act holding the copy, `div#demo`, and the Open link, satisfies **AC-1**, **AC-3**, **AC-5**, **AC-10**, **AC-11**
+6. [x] Build the demo: `src/landing/Demo.tsx` with `useState` over the three seeded tasks and the reused `TaskRow`, mounted by `src/landing/main.tsx` into `div#demo`, with the caption, satisfies **AC-4**
+7. [x] Verify: `pnpm build`, serve `dist/`, run the shoot at desktop, 390px, and reduced motion, read the sheet, fix, shoot again; then Tab through by hand and disable scripts once, satisfies **AC-3**, **AC-6**, **AC-10**, **AC-11**
 
 ## Consequences
 

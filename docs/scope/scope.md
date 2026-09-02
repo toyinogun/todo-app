@@ -77,12 +77,12 @@ Code in `src/features/tasks/TaskList.tsx`, `src/features/tasks/TaskRow.tsx`, `sr
 A short public page that explains the app (what it is, that your list stays private on your device, no account) with a screenshot and one button that opens the app. Where it lives (the app's root with the list one step in, or a separate static page beside it) is a real choice.
 **Done when:** the page says what the app is and why it is private in a few lines, shows the app, and one clear button opens the working list; it uses the design tokens and base pieces; it reads well on a phone and by keyboard.
 - [x] Design it (spec): `/architect landing page`
-- [ ] Build it: `/develop landing page`
-  - [ ] Two pages: landing at the root as plain HTML with head tags, list moved to `app/`, both built by Vite and linked to each other (AC-1, AC-2, AC-3, AC-7, AC-8, AC-9)
-  - [ ] Scroll page by `scroll-craft`: interview, brief, grammar and signature move, real HTML on its engine with its own look, app screenshots as the visuals (AC-1, AC-3, AC-5, AC-10, AC-11)
-  - [ ] Closing act demo: three sample tasks on the real row pieces, in memory only (AC-4)
-  - [ ] Verified: screenshot strip at desktop, phone, and reduced motion, then keyboard and scripts off by hand (AC-3, AC-6, AC-10, AC-11)
-Spec [0004](../specs/0004-landing-page.md)
+- [x] Build it: `/develop landing page`
+  - [x] Two pages: landing at the root as plain HTML with head tags, list moved to `app/`, both built by Vite and linked to each other (AC-1, AC-2, AC-3, AC-7, AC-8, AC-9)
+  - [x] Scroll page by `scroll-craft`: interview, brief, grammar and signature move, real HTML on its engine with its own look, app screenshots as the visuals (AC-1, AC-3, AC-5, AC-10, AC-11)
+  - [x] Closing act demo: three sample tasks on the real row pieces, in memory only (AC-4)
+  - [x] Verified: screenshot strip at desktop, phone, and reduced motion, then keyboard and scripts off by hand (AC-3, AC-6, AC-10, AC-11)
+Spec [0004](../specs/0004-landing-page.md) · code in `index.html`, `app/index.html`, `src/landing/`, brief in `scrollcraft/builds/landing/`
 
 ## Release 3: Find and arrange
 
