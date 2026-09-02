@@ -1,7 +1,7 @@
 # 0002. Task data model and versioned localStorage blob
 
 **Date**: 2026-09-02
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
