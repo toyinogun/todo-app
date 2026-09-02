@@ -15,12 +15,13 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | done |
-| 5 | Task list | Release 1 | planned |
-| 6 | Filter & search | Release 2 | planned |
-| 7 | Drag to reorder | Release 2 | planned |
-| 8 | Due dates | Release 3 | planned |
-| 9 | Reminders | Release 3 | planned |
-| 10 | Offline & installable | Release 4 | planned |
+| 5 | Task list | Release 1 | in-progress |
+| 6 | Landing page | Release 2 | planned |
+| 7 | Filter & search | Release 3 | planned |
+| 8 | Drag to reorder | Release 3 | planned |
+| 9 | Due dates | Release 4 | planned |
+| 10 | Reminders | Release 4 | planned |
+| 11 | Offline & installable | Release 5 | planned |
 
 ## Foundations
 
@@ -61,38 +62,49 @@ Spec [0003](../specs/0003-design-system-ui-foundation.md) · code in `src/index.
 
 ## Release 1: Task list (the smallest usable whole)
 
-### 5. Task list
+### 5. Task list · in-progress
 Add a task, tick it done, edit its title, delete it. Saved on the device. This is the whole product on day one; you could use it tomorrow.
 **Done when:** you can add, complete, uncomplete, edit, and delete tasks; the list is there after a reload; an empty list shows a friendly prompt.
-- [ ] Build it: `/develop task list`
+- [x] Build it: `/develop task list`
+  - [x] Screen: title, add form, list, empty state, storage banner, footer
+  - [x] Row: tick, edit in place (Enter saves, Escape cancels), delete with focus handled
+  - [x] Wired to `usePersistedTasks`, checked in the browser: reload, phone width, light and dark
+Code in `src/features/tasks/TaskList.tsx`, `src/features/tasks/TaskRow.tsx`, `src/features/tasks/banner.ts`, `src/features/tasks/tasks.css`, `src/App.tsx`
 
-## Release 2: Find and arrange
+## Release 2: Show it
 
-### 6. Filter & search
+### 6. Landing page · needs a decision
+A short public page that explains the app (what it is, that your list stays private on your device, no account) with a screenshot and one button that opens the app. Where it lives (the app's root with the list one step in, or a separate static page beside it) is a real choice.
+**Done when:** the page says what the app is and why it is private in a few lines, shows the app, and one clear button opens the working list; it uses the design tokens and base pieces; it reads well on a phone and by keyboard.
+- [ ] Design it (spec): `/architect landing page`
+
+## Release 3: Find and arrange
+
+### 7. Filter & search
 Show all, active, or completed tasks, plus a quick text filter, so the list stays usable past a dozen items.
 **Done when:** the three views work, the text filter narrows the list as you type, the chosen view survives a reload, and an empty result says so.
 - [ ] Build it: `/develop filter & search`
 
-### 7. Drag to reorder · needs a decision
+### 8. Drag to reorder · needs a decision
 Move tasks up and down by hand so the list reflects what matters most. The way dragging is done (native browser events, a library, or keyboard buttons) is a real choice.
 **Done when:** you can drag a task to a new position with the mouse and move it with the keyboard; the order is saved and shown after a reload.
 - [ ] Design it (spec): `/architect drag to reorder`
 
-## Release 3: Time
+## Release 4: Time
 
-### 8. Due dates
+### 9. Due dates
 Give a task a date and see what is overdue or due today at a glance. Uses the browser's own date input.
 **Done when:** you can set and clear a due date on a task; overdue and due today tasks are visibly marked; the list can be viewed by due date.
 - [ ] Build it: `/develop due dates`
 
-### 9. Reminders · needs a decision
+### 10. Reminders · needs a decision
 Get nudged when a task with a due date comes up. In a local only web app there is no server to send anything, so how and when a reminder fires (browser notifications, only while the tab is open, or via the installed app) is a real decision.
 **Done when:** you grant permission once, and a task due soon produces a visible notification while the app is open or installed; nothing fires for tasks already done.
 - [ ] Design it (spec): `/architect reminders`
 
-## Release 4: Always available
+## Release 5: Always available
 
-### 10. Offline & installable · needs a decision
+### 11. Offline & installable · needs a decision
 Load the app with no network and add it to your home screen or dock. Data already lives on the device, so this is about the app shell being cached and the install prompt working.
 **Done when:** the app opens with the network off; the browser offers to install it; the icon and name look right once installed.
 - [ ] Design it (spec): `/architect offline & installable`
