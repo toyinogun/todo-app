@@ -1,7 +1,7 @@
 # 0004. Landing page at the root as a scroll-craft page, list moves to /app/
 
 **Date**: 2026-09-02 (updated 2026-09-02: design source changed from `design.md` to `scroll-craft`)
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
